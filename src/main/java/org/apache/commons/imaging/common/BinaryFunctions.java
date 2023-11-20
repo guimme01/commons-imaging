@@ -35,7 +35,7 @@ public final class BinaryFunctions {
     private static final Logger LOGGER = Logger.getLogger(BinaryFunctions.class.getName());
 
     public static int charsToQuad(final char c1, final char c2, final char c3, final char c4) {
-        return (((0xff & c1) << 24) | ((0xff & c2) << 16) | ((0xff & c3) << 8) | ((0xff & c4) << 0));
+        return (((0xff & c1) << 24) | ((0xff & c2) << 16) | ((0xff & c3) << 8) | (0xff & c4));
     }
 
     public static boolean compareBytes(final byte[] a, final int aStart, final byte[] b,
@@ -100,7 +100,7 @@ public final class BinaryFunctions {
     public static void printCharQuad(final PrintWriter pw, final String msg, final int i) {
         pw.println(msg + ": '" + (char) (0xff & (i >> 24))
                 + (char) (0xff & (i >> 16)) + (char) (0xff & (i >> 8))
-                + (char) (0xff & (i >> 0)) + "'");
+                + (char) (0xff & i) + "'");
 
     }
 
@@ -149,7 +149,7 @@ public final class BinaryFunctions {
         if (byteOrder == ByteOrder.BIG_ENDIAN) {
             result = (byte0 << 16) | (byte1 << 8) | (byte2 << 0);
         } else {
-            result = (byte2 << 16) | (byte1 << 8) | (byte0 << 0);
+            result = (byte2 << 16) | (byte1 << 8) | byte0;
         }
 
         return result;
@@ -171,7 +171,7 @@ public final class BinaryFunctions {
                     | (byte2 << 8) | (byte3 << 0);
         } else {
             result = (byte3 << 24) | (byte2 << 16)
-                    | (byte1 << 8) | (byte0 << 0);
+                    | (byte1 << 8) | byte0;
         }
 
         return result;
@@ -218,7 +218,7 @@ public final class BinaryFunctions {
       result =
           (byte7 << 56) | (byte6 << 48) | (byte5 << 40)
         | (byte4 << 32) | (byte3 << 24) | (byte2 << 16)
-        | (byte1 << 8) | (byte0 << 0);
+        | (byte1 << 8) | byte0;
     }
 
     return result;
