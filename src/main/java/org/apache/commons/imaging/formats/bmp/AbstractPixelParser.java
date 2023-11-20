@@ -49,7 +49,7 @@ abstract class AbstractPixelParser {
         return (alpha << 24)
                 | (red << 16)
                 | (green << 8)
-                | (blue << 0);
+                | blue;
     }
 
     public abstract void processImage(ImageBuilder imageBuilder) throws ImagingException, IOException;
