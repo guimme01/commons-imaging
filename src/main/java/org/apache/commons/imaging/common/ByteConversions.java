@@ -259,7 +259,7 @@ public final class ByteConversions {
         } else {
             bits = (byte7 << 56) | (byte6 << 48) | (byte5 << 40)
                     | (byte4 << 32) | (byte3 << 24) | (byte2 << 16)
-                    | (byte1 << 8) | (byte0 << 0);
+                    | (byte1 << 8) | byte0;
         }
         return Double.longBitsToDouble(bits);
     }
@@ -288,7 +288,7 @@ public final class ByteConversions {
         if (byteOrder == ByteOrder.BIG_ENDIAN) {
             bits = (byte0 << 24) | (byte1 << 16) | (byte2 << 8) | (byte3 << 0);
         } else {
-            bits = (byte3 << 24) | (byte2 << 16) | (byte1 << 8) | (byte0 << 0);
+            bits = (byte3 << 24) | (byte2 << 16) | (byte1 << 8) | byte0;
         }
         return Float.intBitsToFloat(bits);
     }
