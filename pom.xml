@@ -54,6 +54,12 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <commons.conf.dir>src/conf</commons.conf.dir>
 
+    <!-- Sonar Cloud properties -->
+    <properties>
+      <sonar.organization>vragnarr</sonar.organization>
+      <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
+
     <!-- Commons Release Plugin -->
     <commons.release.version>1.0-alpha3</commons.release.version>
     <commons.bc.version>1.0-alpha2</commons.bc.version>
