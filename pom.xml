@@ -55,10 +55,8 @@
     <commons.conf.dir>src/conf</commons.conf.dir>
 
     <!-- Sonar Cloud properties -->
-    <properties>
-      <sonar.organization>vragnarr</sonar.organization>
-      <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    </properties>
+    <sonar.organization>vragnarr</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
     <!-- Commons Release Plugin -->
     <commons.release.version>1.0-alpha3</commons.release.version>
