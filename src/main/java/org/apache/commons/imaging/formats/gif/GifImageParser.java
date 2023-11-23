@@ -358,7 +358,7 @@ public class GifImageParser extends AbstractImageParser<GifImagingParameters> im
 
             final int alpha = 0xff;
 
-            final int rgb = (alpha << 24) | (red << 16) | (green << 8) | (blue << 0);
+            final int rgb = (alpha << 24) | (red << 16) | (green << 8) | blue;
             result[i] = rgb;
         }
 
