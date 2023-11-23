@@ -499,7 +499,7 @@ public class PngWriter {
                             final int alpha = 0xff & (argb >> 24);
                             final int red = 0xff & (argb >> 16);
                             final int green = 0xff & (argb >> 8);
-                            final int blue = 0xff & (argb >> 0);
+                            final int blue = 0xff & argb;
 
                             if (isGrayscale) {
                                 final int gray = (red + green + blue) / 3;
