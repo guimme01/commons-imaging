@@ -86,7 +86,7 @@ final class PixelParserRgb extends AbstractPixelParserSimple {
             final int green = 0xff & imageData[byteCount + 1];
             final int red = 0xff & imageData[byteCount + 2];
             final int alpha = 0xff;
-            final int rgb = (alpha << 24) | (red << 16) | (green << 8) | (blue << 0);
+            final int rgb = (alpha << 24) | (red << 16) | (green << 8) | blue;
             byteCount += 4;
             return rgb;
         }

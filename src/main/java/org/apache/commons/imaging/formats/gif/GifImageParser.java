@@ -768,7 +768,7 @@ public class GifImageParser extends AbstractImageParser<GifImagingParameters> im
             logCharQuad("identifier: ", ((identifier1 << 16)
                     | (identifier2 << 8) | (identifier3 << 0)));
             logCharQuad("version: ",
-                    ((version1 << 16) | (version2 << 8) | (version3 << 0)));
+                    ((version1 << 16) | (version2 << 8) | version3));
         }
 
         final int logicalScreenWidth = read2Bytes("Logical Screen Width", is, "Not a Valid GIF File", getByteOrder());
@@ -1070,7 +1070,7 @@ public class GifImageParser extends AbstractImageParser<GifImagingParameters> im
 
                         final int red = 0xff & (rgb >> 16);
                         final int green = 0xff & (rgb >> 8);
-                        final int blue = 0xff & (rgb >> 0);
+                        final int blue = 0xff & rgb;
 
                         bos.write(red);
                         bos.write(green);
