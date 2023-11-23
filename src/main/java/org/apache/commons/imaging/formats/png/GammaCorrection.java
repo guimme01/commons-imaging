@@ -45,7 +45,7 @@ public class GammaCorrection {
         final int alpha = (0xff000000) & pixel;
         int red = (pixel >> 16) & 0xff;
         int green = (pixel >> 8) & 0xff;
-        int blue = (pixel >> 0) & 0xff;
+        int blue = pixel & 0xff;
 
         red = correctSample(red);
         green = correctSample(green);
