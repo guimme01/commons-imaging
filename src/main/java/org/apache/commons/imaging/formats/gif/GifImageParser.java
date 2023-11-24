@@ -766,7 +766,7 @@ public class GifImageParser extends AbstractImageParser<GifImagingParameters> im
 
         if (LOGGER.isLoggable(Level.FINEST)) {
             logCharQuad("identifier: ", ((identifier1 << 16)
-                    | (identifier2 << 8) | (identifier3 << 0)));
+                    | (identifier2 << 8) | identifier3));
             logCharQuad("version: ",
                     ((version1 << 16) | (version2 << 8) | version3));
         }
