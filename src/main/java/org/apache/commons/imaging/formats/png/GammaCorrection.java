@@ -51,7 +51,7 @@ public class GammaCorrection {
         green = correctSample(green);
         blue = correctSample(blue);
 
-        return alpha | ((0xff & red) << 16) | ((0xff & green) << 8) | ((0xff & blue) << 0);
+        return alpha | ((0xff & red) << 16) | ((0xff & green) << 8) | (0xff & blue);
     }
 
     public int correctSample(final int sample) {
