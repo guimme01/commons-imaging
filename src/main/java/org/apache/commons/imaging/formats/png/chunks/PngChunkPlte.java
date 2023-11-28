@@ -51,7 +51,7 @@ public class PngChunkPlte extends PngChunk {
             final int blue = readByte("blue[" + i + "]", is,
                     "Not a Valid PNG File: PLTE Corrupt");
             rgb[i] = 0xff000000 | ((0xff & red) << 16) | ((0xff & green) << 8)
-                    | ((0xff & blue) << 0);
+                    | (0xff & blue);
         }
     }
 
