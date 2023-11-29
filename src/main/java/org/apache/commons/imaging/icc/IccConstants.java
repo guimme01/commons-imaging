@@ -20,7 +20,7 @@ public final class IccConstants {
     public static final int IEC = (((0xff & 'I') << 24) | ((0xff & 'E') << 16)
             | ((0xff & 'C') << 8) | ((0xff & ' ') << 0));
     public static final int sRGB = (((0xff & 's') << 24) | ((0xff & 'R') << 16)
-            | ((0xff & 'G') << 8) | ((0xff & 'B') << 0));
+            | ((0xff & 'G') << 8) | ((0xff & 'B')));
 
     private IccConstants() {
     }
