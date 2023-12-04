@@ -219,7 +219,7 @@ public class WbmpImageParser extends AbstractImageParser<WbmpImagingParameters> 
                 final int argb = src.getRGB(x, y);
                 final int red = 0xff & (argb >> 16);
                 final int green = 0xff & (argb >> 8);
-                final int blue = 0xff & (argb >> 0);
+                final int blue = 0xff & argb;
                 final int sample = (red + green + blue) / 3;
                 if (sample > 127) {
                     pixel |= nextBit;

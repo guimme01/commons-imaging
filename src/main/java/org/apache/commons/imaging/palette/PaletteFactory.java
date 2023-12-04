@@ -317,7 +317,7 @@ public class PaletteFactory {
 
                 final int red = 0xff & (argb >> 16);
                 final int green = 0xff & (argb >> 8);
-                final int blue = 0xff & (argb >> 0);
+                final int blue = 0xff & argb;
 
                 if (red != green || red != blue) {
                     return false;
