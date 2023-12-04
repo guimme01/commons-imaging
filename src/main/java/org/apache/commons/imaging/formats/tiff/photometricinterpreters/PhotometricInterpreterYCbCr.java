@@ -78,7 +78,7 @@ public class PhotometricInterpreterYCbCr extends PhotometricInterpreter {
         final int blue = limit((int) b, 0, 255);
 
         final int alpha = 0xff;
-        final int rgb = (alpha << 24) | (red << 16) | (green << 8) | (blue << 0);
+        final int rgb = (alpha << 24) | (red << 16) | (green << 8) | blue;
         imageBuilder.setRgb(x, y, rgb);
 
     }

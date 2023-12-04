@@ -105,13 +105,13 @@ final class BitInputStream extends FilterInputStream {
             switch (count) {
             case 16:
                 bytesRead += 2;
-                return (in.read() << 8) | (in.read() << 0);
+                return (in.read() << 8) | in.read();
             case 24:
                 bytesRead += 3;
                 return (in.read() << 16) | (in.read() << 8) | (in.read());
             case 32:
                 bytesRead += 4;
-                return (in.read() << 24) | (in.read() << 16) | (in.read() << 8) | (in.read() << 0);
+                return (in.read() << 24) | (in.read() << 16) | (in.read() << 8) | in.read();
             default:
                 break;
             }
@@ -122,7 +122,7 @@ final class BitInputStream extends FilterInputStream {
                 return ((in.read()) | (in.read() << 8));
             case 24:
                 bytesRead += 3;
-                return ((in.read() << 0) | (in.read() << 8) | (in.read() << 16));
+                return (in.read() | (in.read() << 8) | (in.read() << 16));
             case 32:
                 bytesRead += 4;
                 return ((in.read()) | (in.read() << 8) | (in.read() << 16) | (in.read() << 24));
