@@ -29,7 +29,7 @@ public class SimplePalette implements Palette {
      */
     public SimplePalette(final int[] palette) {
         this.palette = Objects.requireNonNull(palette, "palette").clone();
-        System.out.println("LUNGHEZZA PALETTE = "+this.length());
+        System.out.println("LUNGHEZZA PALETTE = " + this.length());
     }
 
     @Override
