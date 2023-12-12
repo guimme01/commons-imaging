@@ -410,7 +410,7 @@ public class PaletteFactory {
         final int[] result = Allocator.intArray(rgbs.size());
         int next = 0;
         for (final int rgb : rgbs) {
-            System.out.println("ci sono entrato per la "+ next +"volta");
+            System.out.println("ci sono entrato per la " + next + "volta");
             result[next++] = rgb;
         }
         Arrays.sort(result);
