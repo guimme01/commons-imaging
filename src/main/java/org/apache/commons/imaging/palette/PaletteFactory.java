@@ -401,7 +401,6 @@ public class PaletteFactory {
             for (int x = 0; x < width; x++) {
                 final int argb = src.getRGB(x, y);
                 final int rgb = 0xffffff & argb;
-
                 if (rgbs.add(rgb) && rgbs.size() > max) {
                     return null;
                 }
@@ -414,7 +413,6 @@ public class PaletteFactory {
             result[next++] = rgb;
         }
         Arrays.sort(result);
-
         return new SimplePalette(result);
     }
 

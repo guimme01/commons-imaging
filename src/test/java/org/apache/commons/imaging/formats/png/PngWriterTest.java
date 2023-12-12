@@ -93,7 +93,6 @@ public class PngWriterTest extends AbstractPngTest {
             }
         };
         final byte[] palettedBytes = getImageBytes(image, params, factory);
-
         assertEquals(1, countColors(palettedBytes));
     }
 }

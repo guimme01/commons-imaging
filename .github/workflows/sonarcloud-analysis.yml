@@ -51,6 +51,3 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=guimme01_commons-imaging
-          echo "Debug Info:"
-          echo "Current Directory: $(pwd)"
-          echo "Contents of Current Directory: $(ls -l)"
