@@ -111,6 +111,15 @@
         </dependencies>
       </plugin>
       <plugin>
+        <groupId>org.evosuite.plugins</groupId>
+        <artifactId>evosuite-maven-plugin</artifactId>
+        <version>1.0.6</version>
+        <executions><execution>
+          <goals> <goal> prepare </goal> </goals>
+          <phase> process-test-classes </phase>
+        </execution></executions>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
@@ -280,6 +289,12 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>3.13.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.evosuite</groupId>
+      <artifactId>evosuite-standalone-runtime</artifactId>
+      <version>1.0.6</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
