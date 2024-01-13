@@ -22,6 +22,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.imaging.ImagingException;
@@ -43,7 +44,7 @@ public class DqtSegment extends AbstractSegment {
          * @return the elements
          */
         public int[] getElements() {
-            return elements;
+            return Arrays.copyOf(elements, elements.length);
         }
     }
 

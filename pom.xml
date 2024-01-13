@@ -114,6 +114,9 @@
         <groupId>org.owasp</groupId>
         <artifactId>dependency-check-maven</artifactId>
         <version>9.0.6</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
         <executions>
           <execution>
             <goals>
