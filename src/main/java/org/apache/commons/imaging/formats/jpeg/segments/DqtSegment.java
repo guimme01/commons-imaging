@@ -37,7 +37,7 @@ public class DqtSegment extends AbstractSegment {
                 final int[] elements) {
             this.precision = precision;
             this.destinationIdentifier = destinationIdentifier;
-            this.elements = elements;
+            this.elements = Arrays.copyOf(elements, elements.length);
         }
 
         /**

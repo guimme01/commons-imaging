@@ -19,6 +19,7 @@ package org.apache.commons.imaging.icc;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Arrays;
 import java.util.logging.Logger;
 
 import org.apache.commons.imaging.ImagingException;
@@ -51,7 +52,7 @@ public class IccProfileInfo {
             final int variousFlags, final int deviceManufacturer, final int deviceModel,
             final int renderingIntent, final int profileCreatorSignature, final byte[] profileId,
             final IccTag[] tags) {
-        this.data = data;
+        this.data = Arrays.copyOf(data, data.length);
 
         this.profileSize = profileSize;
         this.cmmTypeSignature = cmmTypeSignature;
@@ -68,7 +69,7 @@ public class IccProfileInfo {
         this.profileCreatorSignature = profileCreatorSignature;
         this.profileId = profileId;
 
-        this.tags = tags;
+        this.tags = Arrays.copyOf(tags, tags.length);
     }
 
     public void dump(final String prefix) {
@@ -84,7 +85,7 @@ public class IccProfileInfo {
     }
 
     public IccTag[] getTags() {
-        return tags;
+        return Arrays.copyOf(tags, tags.length);
     }
 
     public boolean isSrgb() {

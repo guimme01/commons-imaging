@@ -16,6 +16,7 @@
  */
 package org.apache.commons.imaging.formats.jpeg.iptc;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -31,8 +32,8 @@ public class IptcBlock {
     public IptcBlock(final int blockType, final byte[] blockNameBytes, final byte[] blockData) {
         Objects.requireNonNull(blockNameBytes, "blockNameBytes");
         Objects.requireNonNull(blockData, "blockData");
-        this.blockData = blockData;
-        this.blockNameBytes = blockNameBytes;
+        this.blockData = Arrays.copyOf(blockData, blockData.length);
+        this.blockNameBytes = Arrays.copyOf(blockNameBytes, blockNameBytes.length);
         this.blockType = blockType;
     }
 

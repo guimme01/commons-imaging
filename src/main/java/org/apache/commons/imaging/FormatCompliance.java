@@ -38,7 +38,6 @@ public class FormatCompliance {
 
     private final boolean failOnError;
     private final String description;
-
     private final List<String> comments = new ArrayList<>();
 
     public FormatCompliance(final String description) {
@@ -127,7 +126,6 @@ public class FormatCompliance {
 
         return true;
     }
-
     public void dump() {
         try (StringWriter sw = new StringWriter(); PrintWriter pw = new PrintWriter(sw)) {
             dump(pw);

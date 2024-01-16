@@ -16,6 +16,7 @@
  */
 package org.apache.commons.imaging.formats.tiff;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 import org.apache.commons.imaging.common.Allocator;
@@ -72,7 +73,7 @@ public class TiffRasterDataFloat extends TiffRasterData {
             throw new IllegalArgumentException(
                     "Specified data does not contain sufficient elements");
         }
-        this.data = data;
+        this.data = Arrays.copyOf(data, data.length);
     }
 
     /**
@@ -102,7 +103,7 @@ public class TiffRasterDataFloat extends TiffRasterData {
             throw new IllegalArgumentException(
                 "Specified data does not contain sufficient elements");
         }
-        this.data = data;
+        this.data = Arrays.copyOf(data, data.length);
     }
 
     /**
@@ -122,7 +123,7 @@ public class TiffRasterDataFloat extends TiffRasterData {
      */
     @Override
     public float[] getData() {
-        return data;
+        return Arrays.copyOf(data, data.length);
     }
 
     /**

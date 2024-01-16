@@ -114,7 +114,7 @@ public class IccTag {
     }
 
     public void setData(final byte[] bytes) throws IOException {
-        data = bytes;
+        data = Arrays.copyOf(bytes, bytes.length);
 
         try (InputStream bis = new ByteArrayInputStream(bytes)) {
             dataTypeSignature = BinaryFunctions.read4Bytes("data type signature", bis,

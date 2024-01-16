@@ -18,6 +18,8 @@ package org.apache.commons.imaging.formats.tiff;
 
 import org.apache.commons.imaging.common.Allocator;
 
+import java.util.Arrays;
+
 /**
  * Provides a simple container for floating-point data. Some TIFF files are used
  * to store floating-point data rather than images. This class is intended to
@@ -83,7 +85,7 @@ public class TiffRasterDataInt extends TiffRasterData {
             throw new IllegalArgumentException(
                 "Specified data does not contain sufficient elements");
         }
-        this.data = data;
+        this.data = Arrays.copyOf(data, data.length);
     }
 
     /**
@@ -100,7 +102,7 @@ public class TiffRasterDataInt extends TiffRasterData {
             throw new IllegalArgumentException(
                     "Specified data does not contain sufficient elements");
         }
-        this.data = data;
+        this.data = Arrays.copyOf(data, data.length);
     }
 
     /**
@@ -144,7 +146,7 @@ public class TiffRasterDataInt extends TiffRasterData {
      */
     @Override
     public int[] getIntData() {
-        return data;
+        return Arrays.copyOf(data, data.length);
     }
 
     /**

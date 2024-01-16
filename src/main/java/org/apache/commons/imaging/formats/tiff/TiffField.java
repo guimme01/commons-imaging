@@ -74,7 +74,7 @@ public class TiffField {
         this.abstractFieldType = abstractFieldType;
         this.count = count;
         this.offset = offset;
-        this.value = value;
+        this.value = Arrays.copyOf(value, value.length);
         this.byteOrder = byteOrder;
         this.sortHint = sortHint;
 

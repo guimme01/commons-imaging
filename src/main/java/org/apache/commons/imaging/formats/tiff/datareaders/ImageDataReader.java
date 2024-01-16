@@ -192,7 +192,7 @@ public abstract class ImageDataReader {
         final int width, final int height, final TiffPlanarConfiguration planarConfiguration) {
         this.directory = directory;
         this.photometricInterpreter = photometricInterpreter;
-        this.bitsPerSample = bitsPerSample;
+        this.bitsPerSample = Arrays.copyOf(bitsPerSample, bitsPerSample.length);
         this.bitsPerSampleLength = bitsPerSample.length;
         this.samplesPerPixel = samplesPerPixel;
         this.sampleFormat = sampleFormat;

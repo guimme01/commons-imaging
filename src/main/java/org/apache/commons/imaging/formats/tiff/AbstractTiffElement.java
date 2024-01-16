@@ -16,6 +16,7 @@
  */
 package org.apache.commons.imaging.formats.tiff;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 public abstract class AbstractTiffElement {
@@ -25,7 +26,7 @@ public abstract class AbstractTiffElement {
         public DataElement(final long offset, final int length, final byte[] data) {
             super(offset, length);
 
-            this.data = data;
+            this.data = Arrays.copyOf(data, data.length);
         }
 
         public byte[] getData() {

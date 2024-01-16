@@ -49,7 +49,7 @@ public class TiffOutputField {
         this.tagInfo = tagInfo;
         this.abstractFieldType = abstractFieldType;
         this.count = count;
-        this.bytes = bytes;
+        this.bytes = Arrays.copyOf(bytes, bytes.length);
 
         if (isLocalValue()) {
             separateValueItem = null;

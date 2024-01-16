@@ -18,6 +18,7 @@ package org.apache.commons.imaging.formats.tiff;
 
 import java.io.IOException;
 import java.nio.ByteOrder;
+import java.util.Arrays;
 
 import org.apache.commons.imaging.ImagingException;
 import org.apache.commons.imaging.formats.tiff.constants.TiffPlanarConfiguration;
@@ -49,7 +50,7 @@ public abstract class AbstractTiffImageData {
         public final int rowsPerStrip;
 
         public Strips(final AbstractTiffElement.DataElement[] strips, final int rowsPerStrip) {
-            this.strips = strips;
+            this.strips = Arrays.copyOf(strips, strips.length);
             this.rowsPerStrip = rowsPerStrip;
         }
 
@@ -70,7 +71,7 @@ public abstract class AbstractTiffImageData {
 
         @Override
         public AbstractTiffElement.DataElement[] getImageData() {
-            return strips;
+            return Arrays.copyOf(strips, strips.length);
         }
 
         public AbstractTiffElement.DataElement getImageData(final int offset) {
@@ -97,7 +98,7 @@ public abstract class AbstractTiffImageData {
         private final int tileLength;
 
         public Tiles(final AbstractTiffElement.DataElement[] tiles, final int tileWidth, final int tileLength) {
-            this.tiles = tiles;
+            this.tiles = Arrays.copyOf(tiles, tiles.length);
             this.tileWidth = tileWidth;
             this.tileLength = tileLength;
         }
@@ -119,7 +120,7 @@ public abstract class AbstractTiffImageData {
 
         @Override
         public AbstractTiffElement.DataElement[] getImageData() {
-            return tiles;
+            return Arrays.copyOf(tiles, tiles.length);
         }
 
         /**

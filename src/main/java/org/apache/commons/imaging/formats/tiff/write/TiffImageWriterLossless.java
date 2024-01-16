@@ -79,12 +79,12 @@ public class TiffImageWriterLossless extends AbstractTiffImageWriter {
     private final byte[] exifBytes;
 
     public TiffImageWriterLossless(final byte[] exifBytes) {
-        this.exifBytes = exifBytes;
+        this.exifBytes = Arrays.copyOf(exifBytes, exifBytes.length);
     }
 
     public TiffImageWriterLossless(final ByteOrder byteOrder, final byte[] exifBytes) {
         super(byteOrder);
-        this.exifBytes = exifBytes;
+        this.exifBytes = Arrays.copyOf(exifBytes, exifBytes.length);
     }
 
     private List<AbstractTiffElement> analyzeOldTiff(final Map<Integer, TiffOutputField> frozenFields) throws ImagingException,
