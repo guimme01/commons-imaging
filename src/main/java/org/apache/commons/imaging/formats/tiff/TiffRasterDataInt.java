@@ -16,9 +16,9 @@
  */
 package org.apache.commons.imaging.formats.tiff;
 
+import java.util.Arrays;
 import org.apache.commons.imaging.common.Allocator;
 
-import java.util.Arrays;
 
 /**
  * Provides a simple container for floating-point data. Some TIFF files are used
