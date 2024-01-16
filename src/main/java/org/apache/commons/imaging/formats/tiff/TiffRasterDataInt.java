@@ -17,6 +17,7 @@
 package org.apache.commons.imaging.formats.tiff;
 
 import java.util.Arrays;
+
 import org.apache.commons.imaging.common.Allocator;
 
 
