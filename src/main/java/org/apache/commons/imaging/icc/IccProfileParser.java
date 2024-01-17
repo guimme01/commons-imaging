@@ -110,7 +110,7 @@ public class IccProfileParser extends BinaryFileParser {
             // if (length != ProfileSize)
             // return null;
 
-            skipBytes(is, 4 * 5);
+            skipBytes(is, (long) 4 * 5);
 
             skipBytes(is, 12, "Not a Valid ICC Profile");
 
