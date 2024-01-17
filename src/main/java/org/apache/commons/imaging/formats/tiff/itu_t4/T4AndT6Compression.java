@@ -326,7 +326,9 @@ public final class T4AndT6Compression {
             // EOFB
             T4_T6_Tables.EOL.writeBits(outputStream);
             T4_T6_Tables.EOL.writeBits(outputStream);
-            return outputStream.toByteArray();
+            byte[] ret = outputStream.toByteArray();
+            outputStream.close();
+            return ret;
         } catch (final IOException ioException) {
             throw new ImagingException("I/O error", ioException);
         }
